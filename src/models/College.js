@@ -1,34 +1,30 @@
 const mongoose = require('mongoose');
 
 const collegeSchema = new mongoose.Schema({
-    'Sr. No.': {
-        type: Number,
-        required: true
+    "Sr. No.": {
+        type: Number
     },
-    'College Code': {
-        type: String,
-        required: true
+    "College Code": {
+        type: String
     },
-    'Course Type': {
-        type: String,
-        required: true
+    "College Name": {  
+        type: String
     },
-    'Course Name': {
-        type: String,
-        required: true
+    "District": {
+        type: String
     },
-    'District': {
-        type: String,
-        required: true
+    "Course Name": {
+        type: String
     },
-    'College Name': {
-        type: String,
-        required: true
+    "Course Type": {
+        type: String
     },
-    'Location': String,
-    'contactNumber': String
-}, {
-    collection: 'colleges'
-});
+    "Location": {
+        type: String
+    },
+    "Contact": {
+        type: String
+    }
+}, { strict: false }); 
 
 module.exports = mongoose.model('College', collegeSchema);
