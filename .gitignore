@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+.DS_Store
+src/public/imgs/jdk-25_windows-x64_bin.exe
+gitattributes

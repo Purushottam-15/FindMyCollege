@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="imgs/logo.png"/></a>
+        </div>
+        <div class="profile-section">
+            <div class="home"><a href="index.html">Home</a></div>
+            <div class="profile-icon" onclick="toggleDropdown()">A</div>
+            <div class="dropdown" id="profileDropdown">
+                <div class="dropdown-item" onclick="viewProfile()">View Profile</div>
+                <div class="dropdown-item" onclick="changePassword()">Change Password</div>
+                <div class="dropdown-item" onclick="logout()">Logout</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="main-title">College Management System</h1>
+        <p class="main-subtitle">Manage colleges, courses, and institutional data</p>
+
+        <div class="action-buttons">
+            <button class="action-btn" onclick="showAddForm()">Add New College</button>
+            <button class="action-btn" onclick="showUpdateForm()">Update College</button>
+            <button class="action-btn" onclick="showDeleteForm()">Delete College</button>
+        </div>
+
+        <div class="form-container" id="addForm">
+            <div class="form-title">Add New College</div>
+            <form id="addCollegeForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Sr. No. *</label>
+                        <input type="number" name="Sr. No." class="form-input" placeholder="Enter serial number" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">College Code *</label>
+                        <input type="text" name="College Code" class="form-input" placeholder="Enter college code" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">College Name *</label>
+                        <input type="text" name="College Name" class="form-input" placeholder="Enter college name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">District *</label>
+                        <input type="text" name="District" class="form-input" placeholder="Enter district" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Course Type *</label>
+                        <input type="text" name="Course Type" class="form-input" placeholder="e.g., UG, PG" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Course Name *</label>
+                        <input type="text" name="Course Name" class="form-input" placeholder="Enter course name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Location</label>
+                        <input type="text" name="Location" class="form-input" placeholder="Enter location">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Contact Number</label>
+                        <input type="tel" name="contactNumber" class="form-input" placeholder="Enter contact number">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Add College</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideAllForms()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="search-container" id="updateForm">
+            <div class="form-title">Update College</div>
+            <input type="text" class="search-input" placeholder="Search college by name, code, or location..." id="updateSearch">
+            <div id="updateResults" class="search-results"></div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" onclick="searchForUpdate()">Search</button>
+                <button type="button" class="btn btn-secondary" onclick="hideAllForms()">Cancel</button>
+            </div>
+        </div>
+
+        <div class="form-container" id="updateEditForm">
+            <div class="form-title">Edit College Details</div>
+            <form id="updateCollegeForm">
+                <input type="hidden" id="updateCollegeId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Sr. No. *</label>
+                        <input type="number" name="Sr. No." id="updateSrNo" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">College Code *</label>
+                        <input type="text" name="College Code" id="updateCollegeCode" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">College Name *</label>
+                        <input type="text" name="College Name" id="updateCollegeName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">District *</label>
+                        <input type="text" name="District" id="updateDistrict" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Course Type *</label>
+                        <input type="text" name="Course Type" id="updateCourseType" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Course Name *</label>
+                        <input type="text" name="Course Name" id="updateCourseName" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Location</label>
+                        <input type="text" name="Location" id="updateLocation" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Contact Number</label>
+                        <input type="tel" name="contactNumber" id="updateContactNumber" class="form-input">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Update College</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideAllForms()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="search-container" id="deleteForm">
+            <div class="form-title">Delete College</div>
+            <input type="text" class="search-input" placeholder="Search college by name, code, or location..." id="deleteSearch">
+            <div id="deleteResults" class="search-results"></div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" onclick="searchForDelete()">Search</button>
+                <button type="button" class="btn btn-secondary" onclick="hideAllForms()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

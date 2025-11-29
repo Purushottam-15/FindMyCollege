@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindMyCollege</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/webp" sizes="16x16" href="imgs/favicon.webp" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html"><img src="imgs/logo.png"/></a>
+          </div>
+          <div class="nav-links">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="admin.html" class="nav-link">Admin</a>
+            <a href="login.html" class="nav-link">Login</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+        
+      <section class="search-section">
+        <div class="container">
+          <form id="searchForm" class="search-form">
+            <div class="search-input-container">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search colleges by name, district, or course..."
+                class="search-input"
+              />
+            </div>
+
+            <div class="filters-row">
+              <div class="filter-group">
+                <label for="courseSelect">Course</label>
+                <select id="courseSelect" class="filter-select">
+                  <option value="All">All</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="districtSelect">District</label>
+                <select id="districtSelect" class="filter-select">
+                  <option value="All">All</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="courseTypeSelect">Course Type</label>
+                <select id="courseTypeSelect" class="filter-select">
+                  <option value="All">All</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="search-button-container">
+              <button type="submit" class="search-button">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="results-section">
+        <div class="container">
+          <div id="loading" class="loading hidden">Loading...</div>
+
+          <div id="resultsInfo" class="results-info hidden">
+            <p>Found <span id="totalResults">0</span> colleges</p>
+          </div>
+
+          <div id="resultsContainer" class="results-container hidden">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Sr. No.</th>
+                  <th>College Code</th>
+                  <th>District</th>
+                  <th>College Name</th>
+                  <th>Course Name</th>
+                  <th>Contact</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody"></tbody>
+            </table>
+          </div>
+
+          <div id="pagination" class="pagination hidden">
+            <button id="prevPage" class="pagination-btn">Previous</button>
+            <div id="pageInfo" class="page-info">Page 1 of 1</div>
+            <button id="nextPage" class="pagination-btn">Next</button>
+          </div>
+
+          <div id="noResults" class="no-results hidden">
+            <p>No colleges found.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <p>&copy; 2025 SearchMyCollege. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="js/app.js"></script>
+
+  </body>
+</html>
