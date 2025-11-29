@@ -7,7 +7,7 @@ const collegeSchema = new mongoose.Schema({
     "College Code": {
         type: String
     },
-    "College Name": {  
+    "College Name": {
         type: String
     },
     "District": {
@@ -22,9 +22,12 @@ const collegeSchema = new mongoose.Schema({
     "Location": {
         type: String
     },
-    "Contact": {
+    "Contact Number": {
         type: String
     }
-}, { strict: false }); 
+}, { 
+    strict: false,  
+    collection: 'colleges' 
+});
 
 module.exports = mongoose.model('College', collegeSchema);
