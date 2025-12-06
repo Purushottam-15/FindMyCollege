@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const LOCAL_MONGODB_URI = 'mongodb://localhost:27017/college_search';
+const LOCAL_MONGODB_URI = 'mongodb://localhost:27017/findmycollege';
 const connectDatabase = async () => {
     try {
         // const conn = await mongoose.connect(LOCAL_MONGODB_URI);
