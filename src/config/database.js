@@ -3,14 +3,15 @@ const mongoose = require('mongoose');
 const LOCAL_MONGODB_URI = 'mongodb://localhost:27017/findmycollege';
 
 const connectDatabase = async () => {
-    try {
-        const uri = process.env.MONGO_URL || LOCAL_MONGODB_URI;
-        const conn = await mongoose.connect(uri);
-        console.log(`MongoDB Connected: ${conn.connection.host}`);
-    } catch (error) {
-        console.error('Database connection error:', error);
-        process.exit(1);
-    }
+  try {
+    const uri = process.env.MONGO_URL || LOCAL_MONGODB_URI;
+    console.log('*** Using Mongo URI:', uri);
+    const conn = await mongoose.connect(uri);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error('Database connection error:', error);
+    process.exit(1);
+  }
 };
 
 module.exports = connectDatabase;
