@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SearchMyCollege - Admin Login</title>
+    <link rel="icon" type="image/webp" sizes="16x16" href="imgs/favicon.webp" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">
+              <img src="imgs/logo.png" alt="SearchMyCollege" />
+            </a>
+          </div>
+          <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="admin-login.html" class="nav-link active">Admin</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-wrapper-login">
+        <div class="loginForm">
+          <h1>Admin Login</h1>
+          <form id="adminLoginForm">
+            <input
+              type="text"
+              id="adminUsername"
+              name="username"
+              placeholder="admin username"
+              required
+            />
+            <input
+              type="password"
+              id="adminPassword"
+              name="password"
+              placeholder="password"
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 FindMyCollege. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/adminLogin.js"></script>
+  </body>
+</html>

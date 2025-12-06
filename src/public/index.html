@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FindMyCollege</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="css/user-profile.css" />
     <link rel="icon" type="image/webp" sizes="16x16" href="imgs/favicon.webp" />
   </head>
   <body>
@@ -12,20 +14,39 @@
       <nav>
         <div class="nav-container">
           <div class="logo">
-            <a href="index.html"><img src="imgs/logo.png"/></a>
+            <a href="index.html"><img src="imgs/logo.png" /></a>
           </div>
           <div class="nav-links">
             <a href="index.html" class="nav-link active">Home</a>
-            <a href="admin.html" class="nav-link">Admin</a>
-            <a href="login.html" class="nav-link">Login</a>
+
+            <a href="login.html" class="nav-link" id="loginNavLink">Login</a>
+
+            <div
+              class="profile-wrapper"
+              id="userProfileWrapper"
+              style="display: none"
+            >
+              <div
+                class="profile-icon"
+                id="userProfileIcon"
+                onclick="toggleUserDropdown()"
+              >
+                U
+              </div>
+              <div class="dropdown" id="userProfileDropdown">
+                <div class="dropdown-item" onclick="viewUserProfile()">
+                  View Profile
+                </div>
+                <div class="dropdown-item" onclick="userLogout()">Logout</div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main>
-        
-      <section class="search-section">
+      <section class="search-section" id="search-section">
         <div class="container">
           <form id="searchForm" class="search-form">
             <div class="search-input-container">
@@ -61,9 +82,7 @@
             </div>
 
             <div class="search-button-container">
-              <button type="submit" class="search-button">
-                Search
-              </button>
+              <button type="submit" class="search-button">Search</button>
             </div>
           </form>
         </div>
@@ -111,7 +130,8 @@
         <p>&copy; 2025 FindMyCollege. All rights reserved.</p>
       </div>
     </footer>
+    <script src="js/indexUserUI.js"></script>
+    <script src="js/landing.js"></script>
     <script src="js/app.js"></script>
-
   </body>
 </html>

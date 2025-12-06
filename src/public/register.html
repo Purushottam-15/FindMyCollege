@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SearchMyCollege - Register</title>
+    <link rel="icon" type="image/webp" sizes="16x16" href="imgs/favicon.webp" />
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">
+              <img src="imgs/logo.png" alt="SearchMyCollege" />
+            </a>
+          </div>
+          <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="register.html" class="nav-link active">Sign Up</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-wrapper-register">
+        <div class="registerForm">
+          <h1>Sign Up</h1>
+          <form id="registerForm">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="username"
+              placeholder="email"
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="new-password"
+              placeholder="password"
+            />
+            <button type="submit">Register</button>
+            <div id="messageBox"></div>
+            <div class="bottom">
+              <p class="haveAccount">
+                <span>Already have an account?</span>
+                <a href="login.html">Login</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 FindMyCollege. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/register.js"></script>
+  </body>
+</html>

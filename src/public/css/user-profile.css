@@ -1,0 +1,50 @@
+.profile-wrapper {
+  position: relative;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6e93bd 0%, #2d3f5b 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(45, 63, 91, 0.45);
+}
+
+.dropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+  padding: 0.4rem 0;
+  min-width: 170px;
+  display: none;
+  z-index: 1001;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #4a5568;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f3f4f6;
+  color: #2d3f5b;
+}
