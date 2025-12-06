@@ -64,6 +64,3 @@ The server runs on `http://localhost:8080` (or the port defined in your env).
 
 ## Contributing
 Contributions are welcome. Open an issue or submit a pull request. If your change affects deployment or environment variables, please update this README.
-
-## License
-Add a LICENSE file to choose a license (e.g., MIT) if you plan to open-source the project.
