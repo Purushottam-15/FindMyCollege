@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const connectDatabase = async () => {
   try {
-    const host = process.env.DB_HOST || 'localhost';
-    const port = process.env.DB_PORT || '27017';
+    const host = process.env. MONGOHOST || 'localhost';
+    const port = process.env.MONGOPORT || '27017';
     const dbName = process.env.DB_NAME || 'findmycollege';
-    const user = process.env.DB_USER;
-    const pass = process.env.DB_PASS;
+    const user = process.env. MONGOUSER;
+    const pass = process.env. MONGOPASSWORD;
 
     let uri;
     if (user && pass) {
@@ -17,13 +17,10 @@ const connectDatabase = async () => {
 
     console.log('*** Using Mongo URI:', uri);
 
-    const conn = await mongoose.connect(uri, {
-      authSource: 'admin',
-    });
-
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    const conn = await mongoose.connect(uri, { authSource: 'admin' });
+    console.log(`MongoDB Connected: ${conn.connection. host}`);
   } catch (error) {
-    console.error('Database connection error:', error);
+    console. error('Database connection error:', error);
     process.exit(1);
   }
 };
